@@ -1,0 +1,21 @@
+image: nixos/19.03
+packages:
+  - nixpkgs.git
+  - nixpkgs.cachix
+repositories:
+  nixpkgs: https://nixos.org/channels/nixos-19.03
+sources:
+  - git@git.sr.ht:~madnat/haskell-tree-sitter
+secrets:
+  - ce4a1ba6-9c0a-43a7-96c9-e37c85e49742
+tasks:
+  - setup: |
+      cachix use all-hies
+      cd haskell-tree-sitter
+      git config --global user.name 'Sourcehut build'
+      git config --global user.email 'build@sr.ht'
+      git submodule sync --recursive
+      git submodule update --init --recursive --force
+  - build: |
+      cd haskell-tree-sitter
+      nix-build release.nix
