@@ -1,15 +1,17 @@
 {-# LANGUAGE TemplateHaskell #-}
 module TreeSitter.Verilog
 ( tree_sitter_verilog
-, Grammar(..)
+, getNodeTypesPath
 ) where
 
-import Language.Haskell.TH
-import TreeSitter.Verilog.Internal
+import Foreign.Ptr
 import TreeSitter.Language
+import Paths_tree_sitter_verilog
 
--- Regenerate template haskell code when these files change:
-addDependentFileRelative "../vendor/tree-sitter-verilog/verilog/src/parser.c"
+foreign import ccall unsafe "vendor/tree-sitter-verilog/verilog/src/parser.c tree_sitter_verilog" tree_sitter_verilog :: Ptr Language
 
--- | Statically-known rules corresponding to symbols in the grammar.
-mkSymbolDatatype (mkName "Grammar") tree_sitter_verilog
+getNodeTypesPath :: IO FilePath
+getNodeTypesPath = getDataFileName "vendor/tree-sitter-verilog/verilog/src/node-types.json"
+
+getTestCorpusDir :: IO FilePath
+getTestCorpusDir = getDataFileName "vendor/tree-sitter-verilog/corpus"
