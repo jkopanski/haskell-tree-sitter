@@ -1,4 +1,4 @@
-{ sources ? import ./nix/sources.json
+{ sources ? import ./nix/sources.nix
 , withHoogle ? false
 }:
 
