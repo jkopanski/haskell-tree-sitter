@@ -10,6 +10,8 @@ maintainer:          jakub@famisoft.pl
 copyright:           2020 Famisoft
 category:            Tree-sitter, Hardware
 build-type:          Simple
+data-files:          vendor/tree-sitter-verilog/verilog/src/node-types.json
+                   , vendor/tree-sitter-verilog/corpus/*.txt
 
 common common
   default-language: Haskell2010

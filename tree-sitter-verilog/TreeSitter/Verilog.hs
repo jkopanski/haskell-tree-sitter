@@ -2,6 +2,7 @@
 module TreeSitter.Verilog
 ( tree_sitter_verilog
 , getNodeTypesPath
+, getTestCorpusDir
 ) where
 
 import Foreign.Ptr
@@ -14,4 +15,4 @@ getNodeTypesPath :: IO FilePath
 getNodeTypesPath = getDataFileName "vendor/tree-sitter-verilog/verilog/src/node-types.json"
 
 getTestCorpusDir :: IO FilePath
-getTestCorpusDir = getDataFileName "vendor/tree-sitter-verilog/corpus"
+getTestCorpusDir = getDataFileName "vendor/tree-sitter-verilog/verilog/test/corpus"
