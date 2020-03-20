@@ -1,22 +1,33 @@
 { sources ? import ./nix/sources.nix
-, withHoogle ? false
 }:
 
 let
-  pkgs = import sources.nixpkgs {};
-  myPackages = (import ./release.nix { inherit sources; withHoogle = true; } );
-  ghcide = import sources.ghcide {};
+  # ghcide = import sources.ghcide {};
+  pkgs = import sources.nixpkgs (import sources."haskell-nix");
+  hsPkgs = import ./default.nix { inherit sources; };
 
-  projectDrvEnv = myPackages.tree-sitter.env.overrideAttrs (oldAttrs: rec {
-    buildInputs = oldAttrs.buildInputs ++ [
-      pkgs.haskellPackages.cabal-install
-      pkgs.haskellPackages.hlint
-      pkgs.haskellPackages.ghcid
-      ghcide.ghcide-ghc865
-      ];
-    shellHook = ''
-      export HIE_HOOGLE_DATABASE="$NIX_GHC_LIBDIR/../../share/doc/hoogle/index.html"
-    '';
-  });
 in
-  projectDrvEnv
+  hsPkgs.shellFor {
+    # Include only the *local* packages of your project.
+    packagse = ps: with ps; [
+      tree-sitter
+      tree-sitter-haskell
+      tree-sitter-verilog
+    ];
+
+    # Builds a Hoogle documentation index of all dependencies,
+    # and provides a "hoogle" command to search the index.
+    withHoogle = true;
+
+    # You might want some extra tools in the shell (optional).
+    buildInputs = with pkgs.haskellPackages; [
+      hlint
+      stylish-haskell
+      ghcid
+      # ghcide.ghcide-ghc882
+    ];
+
+    # Prevents cabal from choosing alternate plans, so that
+    # *all* dependencies are provided by Nix.
+    exactDeps = true;
+  }

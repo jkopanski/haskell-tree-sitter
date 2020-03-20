@@ -1,0 +1,177 @@
+{
+  pkgs = hackage:
+    {
+      packages = {
+        "exceptions".revision = (((hackage."exceptions")."0.10.4").revisions).default;
+        "binary".revision = (((hackage."binary")."0.8.7.0").revisions).default;
+        "ghc-prim".revision = (((hackage."ghc-prim")."0.5.3").revisions).default;
+        "fail".revision = (((hackage."fail")."4.9.0.0").revisions).default;
+        "split".revision = (((hackage."split")."0.2.3.4").revisions).default;
+        "stm".revision = (((hackage."stm")."2.5.0.0").revisions).default;
+        "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
+        "mtl".revision = (((hackage."mtl")."2.2.2").revisions).default;
+        "lifted-async".revision = (((hackage."lifted-async")."0.10.0.5").revisions).default;
+        "rts".revision = (((hackage."rts")."1.0").revisions).default;
+        "mmorph".revision = (((hackage."mmorph")."1.1.3").revisions).default;
+        "scientific".revision = (((hackage."scientific")."0.3.6.2").revisions).default;
+        "deepseq".revision = (((hackage."deepseq")."1.4.4.0").revisions).default;
+        "random".revision = (((hackage."random")."1.1").revisions).default;
+        "uuid-types".revision = (((hackage."uuid-types")."1.0.3").revisions).default;
+        "async".revision = (((hackage."async")."2.2.2").revisions).default;
+        "dlist".revision = (((hackage."dlist")."0.8.0.7").revisions).default;
+        "constraints".revision = (((hackage."constraints")."0.11.2").revisions).default;
+        "semigroups".revision = (((hackage."semigroups")."0.19.1").revisions).default;
+        "lifted-base".revision = (((hackage."lifted-base")."0.2.3.12").revisions).default;
+        "directory".revision = (((hackage."directory")."1.3.4.0").revisions).default;
+        "transformers-compat".revision = (((hackage."transformers-compat")."0.6.5").revisions).default;
+        "template-haskell".revision = (((hackage."template-haskell")."2.15.0.0").revisions).default;
+        "vector".revision = (((hackage."vector")."0.12.1.2").revisions).default;
+        "primitive".revision = (((hackage."primitive")."0.7.0.0").revisions).default;
+        "base-compat".revision = (((hackage."base-compat")."0.11.1").revisions).default;
+        "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
+        "time-compat".revision = (((hackage."time-compat")."1.9.2.2").revisions).default;
+        "ansi-terminal".revision = (((hackage."ansi-terminal")."0.10.3").revisions).default;
+        "tagged".revision = (((hackage."tagged")."0.8.6").revisions).default;
+        "unliftio-core".revision = (((hackage."unliftio-core")."0.1.2.0").revisions).default;
+        "containers".revision = (((hackage."containers")."0.6.2.1").revisions).default;
+        "wl-pprint-annotated".revision = (((hackage."wl-pprint-annotated")."0.1.0.1").revisions).default;
+        "integer-logarithms".revision = (((hackage."integer-logarithms")."1.0.3").revisions).default;
+        "haskell-lexer".revision = (((hackage."haskell-lexer")."1.1").revisions).default;
+        "bytestring".revision = (((hackage."bytestring")."0.10.10.0").revisions).default;
+        "type-equality".revision = (((hackage."type-equality")."1").revisions).default;
+        "text".revision = (((hackage."text")."1.2.4.0").revisions).default;
+        "unordered-containers".revision = (((hackage."unordered-containers")."0.2.10.0").revisions).default;
+        "base".revision = (((hackage."base")."4.13.0.0").revisions).default;
+        "time".revision = (((hackage."time")."1.9.3").revisions).default;
+        "pretty-show".revision = (((hackage."pretty-show")."1.10").revisions).default;
+        "transformers".revision = (((hackage."transformers")."0.5.6.2").revisions).default;
+        "hashable".revision = (((hackage."hashable")."1.3.0.0").revisions).default;
+        "attoparsec".revision = (((hackage."attoparsec")."0.13.2.3").revisions).default;
+        "colour".revision = (((hackage."colour")."2.3.5").revisions).default;
+        "transformers-base".revision = (((hackage."transformers-base")."0.4.5.2").revisions).default;
+        "fused-effects".revision = (((hackage."fused-effects")."1.0.0.1").revisions).default;
+        "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
+        "hedgehog".revision = (((hackage."hedgehog")."1.0.2").revisions).default;
+        "monad-control".revision = (((hackage."monad-control")."1.0.2.3").revisions).default;
+        "process".revision = (((hackage."process")."1.6.7.0").revisions).default;
+        "resourcet".revision = (((hackage."resourcet")."1.2.2").revisions).default;
+        "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
+        "aeson".revision = (((hackage."aeson")."1.4.6.0").revisions).default;
+        "ghc-boot-th".revision = (((hackage."ghc-boot-th")."8.8.2").revisions).default;
+        "base-orphans".revision = (((hackage."base-orphans")."0.8.2").revisions).default;
+        "th-abstraction".revision = (((hackage."th-abstraction")."0.3.2.0").revisions).default;
+        "concurrent-output".revision = (((hackage."concurrent-output")."1.10.11").revisions).default;
+        "array".revision = (((hackage."array")."0.5.4.0").revisions).default;
+        "erf".revision = (((hackage."erf")."2.0.0.0").revisions).default;
+        "integer-gmp".revision = (((hackage."integer-gmp")."1.0.2.0").revisions).default;
+        };
+      compiler = {
+        version = "8.8.2";
+        nix-name = "ghc882";
+        packages = {
+          "exceptions" = "0.10.4";
+          "binary" = "0.8.7.0";
+          "ghc-prim" = "0.5.3";
+          "fail" = "4.9.0.0";
+          "split" = "0.2.3.4";
+          "stm" = "2.5.0.0";
+          "unix" = "2.7.2.2";
+          "mtl" = "2.2.2";
+          "lifted-async" = "0.10.0.5";
+          "rts" = "1.0";
+          "mmorph" = "1.1.3";
+          "scientific" = "0.3.6.2";
+          "deepseq" = "1.4.4.0";
+          "random" = "1.1";
+          "uuid-types" = "1.0.3";
+          "async" = "2.2.2";
+          "dlist" = "0.8.0.7";
+          "constraints" = "0.11.2";
+          "semigroups" = "0.19.1";
+          "lifted-base" = "0.2.3.12";
+          "directory" = "1.3.4.0";
+          "transformers-compat" = "0.6.5";
+          "template-haskell" = "2.15.0.0";
+          "vector" = "0.12.1.2";
+          "primitive" = "0.7.0.0";
+          "base-compat" = "0.11.1";
+          "terminal-size" = "0.3.2.1";
+          "time-compat" = "1.9.2.2";
+          "ansi-terminal" = "0.10.3";
+          "tagged" = "0.8.6";
+          "unliftio-core" = "0.1.2.0";
+          "containers" = "0.6.2.1";
+          "wl-pprint-annotated" = "0.1.0.1";
+          "integer-logarithms" = "1.0.3";
+          "haskell-lexer" = "1.1";
+          "bytestring" = "0.10.10.0";
+          "type-equality" = "1";
+          "text" = "1.2.4.0";
+          "unordered-containers" = "0.2.10.0";
+          "base" = "4.13.0.0";
+          "time" = "1.9.3";
+          "pretty-show" = "1.10";
+          "transformers" = "0.5.6.2";
+          "hashable" = "1.3.0.0";
+          "attoparsec" = "0.13.2.3";
+          "colour" = "2.3.5";
+          "transformers-base" = "0.4.5.2";
+          "fused-effects" = "1.0.0.1";
+          "filepath" = "1.4.2.1";
+          "hedgehog" = "1.0.2";
+          "monad-control" = "1.0.2.3";
+          "process" = "1.6.7.0";
+          "resourcet" = "1.2.2";
+          "pretty" = "1.1.3.6";
+          "aeson" = "1.4.6.0";
+          "ghc-boot-th" = "8.8.2";
+          "base-orphans" = "0.8.2";
+          "th-abstraction" = "0.3.2.0";
+          "concurrent-output" = "1.10.11";
+          "array" = "0.5.4.0";
+          "erf" = "2.0.0.0";
+          "integer-gmp" = "1.0.2.0";
+          };
+        };
+      };
+  extras = hackage:
+    {
+      packages = {
+        tree-sitter-tsx = ./.plan.nix/tree-sitter-tsx.nix;
+        tree-sitter-nix = ./.plan.nix/tree-sitter-nix.nix;
+        tree-sitter-typescript = ./.plan.nix/tree-sitter-typescript.nix;
+        tree-sitter = ./.plan.nix/tree-sitter.nix;
+        tree-sitter-ruby = ./.plan.nix/tree-sitter-ruby.nix;
+        tree-sitter-verilog = ./.plan.nix/tree-sitter-verilog.nix;
+        tree-sitter-java = ./.plan.nix/tree-sitter-java.nix;
+        tree-sitter-haskell = ./.plan.nix/tree-sitter-haskell.nix;
+        tree-sitter-python = ./.plan.nix/tree-sitter-python.nix;
+        tree-sitter-json = ./.plan.nix/tree-sitter-json.nix;
+        tree-sitter-go = ./.plan.nix/tree-sitter-go.nix;
+        tree-sitter-php = ./.plan.nix/tree-sitter-php.nix;
+        tree-sitter-ql = ./.plan.nix/tree-sitter-ql.nix;
+        };
+      };
+  modules = [
+    ({ lib, ... }:
+      {
+        packages = {
+          "tree-sitter-tsx" = { flags = {}; };
+          "tree-sitter-nix" = { flags = {}; };
+          "tree-sitter-typescript" = { flags = {}; };
+          "tree-sitter" = { flags = {}; };
+          "tree-sitter-ruby" = { flags = {}; };
+          "tree-sitter-verilog" = { flags = {}; };
+          "tree-sitter-java" = { flags = {}; };
+          "tree-sitter-haskell" = {
+            flags = { "build-examples" = lib.mkOverride 900 false; };
+            };
+          "tree-sitter-python" = { flags = {}; };
+          "tree-sitter-json" = { flags = {}; };
+          "tree-sitter-go" = { flags = {}; };
+          "tree-sitter-php" = { flags = {}; };
+          "tree-sitter-ql" = { flags = {}; };
+          };
+        })
+    ];
+  }
