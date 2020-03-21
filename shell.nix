@@ -3,13 +3,13 @@
 
 let
   # ghcide = import sources.ghcide {};
-  pkgs = import sources.nixpkgs (import sources."haskell-nix");
+  pkgs = import sources.nixpkgs (import sources."haskell.nix");
   hsPkgs = import ./default.nix { inherit sources; };
 
 in
   hsPkgs.shellFor {
     # Include only the *local* packages of your project.
-    packagse = ps: with ps; [
+    packages = ps: with ps; [
       tree-sitter
       tree-sitter-haskell
       tree-sitter-verilog
