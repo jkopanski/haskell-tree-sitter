@@ -1,9 +1,9 @@
-image: nixos/19.03
+image: nixos/19.09
 packages:
   - nixpkgs.git
   - nixpkgs.cachix
 repositories:
-  nixpkgs: https://nixos.org/channels/nixos-19.03
+  nixpkgs: https://nixos.org/channels/nixos-19.09
 sources:
   - git@git.sr.ht:~madnat/haskell-tree-sitter
 secrets:
