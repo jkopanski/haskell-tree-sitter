@@ -8,9 +8,11 @@ sources:
   - git@git.sr.ht:~madnat/haskell-tree-sitter
 secrets:
   - ce4a1ba6-9c0a-43a7-96c9-e37c85e49742
+  - 7a4d12b4-8878-4e27-83dd-cf6fe0045ffb
 tasks:
   - setup: |
-      cachix use all-hies
+      cachix use iohk
+      cachix use famisoft
       cd haskell-tree-sitter
       git config --global user.name 'Sourcehut build'
       git config --global user.email 'build@sr.ht'
@@ -18,4 +20,6 @@ tasks:
       git submodule update --init --recursive --force
   - build: |
       cd haskell-tree-sitter
-      nix-build release.nix
+      nix-build -A tree-sitter.components.all | cachix push famisoft
+      nix-build -A tree-sitter-haskell.components.all | cachix push famisoft
+      nix-build -A tree-sitter-verilog.components.all | cachix push famisoft
