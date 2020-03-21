@@ -22,6 +22,4 @@ tasks:
       git submodule update --init --recursive --force
   - build: |
       cd haskell-tree-sitter
-      nix-build -A tree-sitter.components.all | cachix push famisoft
-      nix-build -A tree-sitter-haskell.components.all | cachix push famisoft
-      nix-build -A tree-sitter-verilog.components.all | cachix push famisoft
+      nix-build -f release.nix | cachix push famisoft
