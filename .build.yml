@@ -23,3 +23,7 @@ tasks:
   - build: |
       cd haskell-tree-sitter
       nix-build -f release.nix | cachix push famisoft
+  - mirror: |
+      cd haskell-tree-sitter
+      git remote add github https://github.com/jkopanski/haskell-tree-sitter.git
+      git push -f github '+refs/remotes/origin/*:refs/heads/*' '+refs/tags/*:refs/tags/*'
