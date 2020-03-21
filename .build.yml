@@ -7,11 +7,13 @@ sources:
   - git@git.sr.ht:~madnat/haskell-tree-sitter
 secrets:
   - ce4a1ba6-9c0a-43a7-96c9-e37c85e49742
+  - bf387dfb-e183-4fc1-bd6e-01b16c209101
   - 7a4d12b4-8878-4e27-83dd-cf6fe0045ffb
 tasks:
   - setup-user: |
       git config --global user.name 'Sourcehut build'
       git config --global user.email 'build@sr.ht'
+      git config --global credential.helper store
   - install-cachix: |
       nix-env -iA cachix -f https://cachix.org/api/v1/install
       cachix use iohk
