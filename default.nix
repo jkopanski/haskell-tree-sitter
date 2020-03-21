@@ -7,8 +7,16 @@ let
 
   pkgSet = haskell.mkCabalProjectPkgSet {
     plan-pkgs = import ./pkgs.nix;
-    pkg-def-extras = [];
-    modules = [];
+    pkg-def-extras = [
+      (hackage: {
+        happy = hackage.happy."1.19.12".revisions.default;
+      })
+    ];
+    modules = [
+      { packages.happy.package.setup-depends = [pkgSet.config.hsPkgs.Cabal]; }
+      { packages.hsc2hs.package.setup-depends = [pkgSet.config.hsPkgs.Cabal]; }
+      { packages.pretty-show.package.setup-depends = [pkgSet.config.hsPkgs.Cabal]; }
+    ];
   };
 
 in
