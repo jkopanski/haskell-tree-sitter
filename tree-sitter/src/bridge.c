@@ -113,11 +113,9 @@ uint32_t ts_tree_cursor_copy_child_nodes(TSTreeCursor *cursor, Node *outChildNod
     do {
       TSNode current = ts_tree_cursor_current_node(cursor);
       const char *fieldName = ts_tree_cursor_current_field_name(cursor);
-      if (fieldName || (ts_node_is_named(current) && !ts_node_is_extra(current))) {
-        ts_node_poke(fieldName, current, outChildNodes);
-        count++;
-        outChildNodes++;
-      }
+      ts_node_poke(fieldName, current, outChildNodes);
+      count++;
+      outChildNodes++;
     } while (ts_tree_cursor_goto_next_sibling(cursor));
     ts_tree_cursor_goto_parent(cursor);
   }
